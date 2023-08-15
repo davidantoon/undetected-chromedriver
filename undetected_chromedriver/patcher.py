@@ -217,9 +217,9 @@ class Patcher(object):
         :return: version string
         :rtype: LooseVersion
         """
-        path = "/latest_release"
-        if self.version_main:
-            path += f"_{self.version_main}"
+        path = "/114"
+        # if self.version_main:
+        #     path += f"_{self.version_main}"
         path = path.upper()
         logger.debug("getting release number from %s" % path)
         return LooseVersion(urlopen(self.url_repo + path).read().decode())
